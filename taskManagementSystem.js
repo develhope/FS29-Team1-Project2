@@ -26,34 +26,34 @@ function listTasks() {
   let index = 0;
   setTimeout(() => {
     tasks.forEach((task) => {
-      console.log(`${index} ${task}`);
+      console.log(`id:${index} - Attività: ${task}`);
       index++;
     });
   }, 2000);
 }
 
-addTask("ciao1", (error, data) => {
+addTask("task 1", (error, data) => {
   if (error) {
     console.log(error);
   } else {
     console.log(data);
   }
 });
-addTask("ciao2", (error, data) => {
+addTask("task 2", (error, data) => {
   if (error) {
     console.log(error);
   } else {
     console.log(data);
   }
 });
-addTask("ciao3", (error, data) => {
+addTask("task 3", (error, data) => {
   if (error) {
     console.log(error);
   } else {
     console.log(data);
   }
 });
-addTask("ciao4", (error, data) => {
+addTask("task 4", (error, data) => {
   if (error) {
     console.log(error);
   } else {
@@ -67,5 +67,4 @@ completeTask(3, (error, data) => {
     console.log(data);
   }
 });
-
 listTasks();
