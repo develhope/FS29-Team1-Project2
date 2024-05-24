@@ -2,11 +2,11 @@ const tasks = [];
 
 function addTask(task, callback) {
   setTimeout(() => {
-    if (!task || typeof task !== "string") {
-      callback(new Error("Task must be a non-empty string"), null);
+    if (!task || typeof task !== `string`) {
+      callback(new Error(`Task must be a non-empty string`), null);
     } else {
       tasks.push(task);
-      callback(null, "Task added successfully");
+      callback(null, `Task added successfully`);
     }
   }, 1000);
 }
@@ -32,39 +32,41 @@ function listTasks() {
   }, 2000);
 }
 
+//test 
 addTask("task 1", (error, data) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     console.log(data);
   }
 });
 addTask("task 2", (error, data) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     console.log(data);
   }
 });
 addTask("task 3", (error, data) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     console.log(data);
   }
 });
 addTask("task 4", (error, data) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     console.log(data);
   }
 });
 completeTask(3, (error, data) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     console.log(data);
   }
 });
 listTasks();
+
