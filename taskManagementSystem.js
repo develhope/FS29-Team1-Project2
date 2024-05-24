@@ -8,7 +8,7 @@ function addTask(task, callback) {
       tasks.push(task);
       callback(null, `Task added successfully`);
     }
-  }, 2000);
+  }, 1000);
 }
 
 function completeTask(index, callback) {
@@ -21,12 +21,52 @@ function completeTask(index, callback) {
     }
   }, 1000);
 }
-function listTask() {
+
+function listTasks() {
   let index = 0;
   setTimeout(() => {
     tasks.forEach((task) => {
-      console.log(task, index);
+      console.log(`id:${index} - Attività: ${task}`);
       index++;
     });
   }, 2000);
 }
+
+//test 
+addTask("task 1", (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+addTask("task 2", (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+addTask("task 3", (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+addTask("task 4", (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+completeTask(3, (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+listTasks();
+
