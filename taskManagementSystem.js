@@ -21,3 +21,12 @@ function completeTask(index, callback) {
     }
   }, 1000);
 }
+function listTask() {
+  let index = 0;
+  setTimeout(() => {
+    tasks.forEach((task) => {
+      console.log(task, index);
+      index++;
+    });
+  }, 2000);
+}
