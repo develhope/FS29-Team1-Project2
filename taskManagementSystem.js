@@ -1,5 +1,6 @@
 const tasks = [];
 
+
 function delay() {
   return new Promise((resolve) => setTimeout(resolve, 1000));
 }
@@ -33,6 +34,7 @@ async function listTasks() {
     index++;
   });
 }
+
 async function print() {
   try {
     let result = await addTask("Pulire la casa");
@@ -48,3 +50,4 @@ async function print() {
   }
 }
 print();
+
