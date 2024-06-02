@@ -10,7 +10,7 @@ async function addTask(task) {
     throw new Error("Task must be a non-empty string");
   } else {
     tasks.push(task);
-    return "Task added successfully";
+    return task;
   }
 }
 
@@ -21,13 +21,14 @@ async function completeTask(index) {
   } else {
     const task = tasks[index];
     tasks.splice(index, 1);
-    return `${task}: completed successfully`;
+    return task;
   }
 }
 
 async function listTasks() {
   await delay();
   let index = 0;
+  console.log("Attività in corso:");
   tasks.forEach((task) => {
     console.log(`id:${index} - Attività: ${task}`);
     index++;
@@ -36,13 +37,16 @@ async function listTasks() {
 async function print() {
   try {
     let result = await addTask("Pulire la casa");
-    console.log(result);
+    console.log(`Aggiunta l'attività:
+${result}`);
     result = await addTask("Portare fuori il cane");
-    console.log(result);
-    await listTask();
+    console.log(`Aggiunta l'attività:
+${result}`);
+    await listTasks();
     result = await completeTask(1);
-    console.log(result);
-    await listTask();
+    console.log(`L'attività completata è
+${result}`);
+    await listTasks();
   } catch (error) {
     console.error(error);
   }
